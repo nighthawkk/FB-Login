@@ -1,0 +1,178 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Facebook Login Integration - Made in LARAVEL framework.</title>
+	
+	<meta name="description" content="This API is used for the Facebook Login Integration.
+In these user need to click "Login With Facebook" button, and after that he/she will be redirected to facebook with a pop up of login-demo app(created by me) for accept or reject of request. After accepting he would be redirected to the user's profile on the website with their basic details, like email address, profile picture, gender, etc.
+">
+	<meta name="author" content="Aman Kumar">
+	<meta name="copyright" content="Aman Kumar">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-06-04T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-facebook-login-integration">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#software_requirements" title="SOFTWARE REQUIREMENTS.">SOFTWARE REQUIREMENTS.</a></li>
+			<li><a href="#preparing_database" title="Preparing Database.">Preparing Database.</a></li>
+			<li><a href="#getting_started" title="GETTING STARTED.">GETTING STARTED.</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Aman Kumar 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Facebook Login Integration</h1>
+	<h2>Made in LARAVEL framework.</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 06/03/2016</li>
+	<li>latest update: 06/04/2016</li>
+	<li>by: Aman Kumar</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:&#97;&#109;&#97;&#110;&#46;&#49;&#52;&#49;&#51;&#48;&#49;&#50;&#64;&#107;&#105;&#101;&#116;&#46;&#101;&#100;&#117;">&#97;&#109;&#97;&#110;&#46;&#49;&#52;&#49;&#51;&#48;&#49;&#50;&#64;&#107;&#105;&#101;&#116;&#46;&#101;&#100;&#117;</a></li>
+	</ul>
+	<p>API for Facebook login integration.(made in LARAVEL framework.)</p>
+	</section>
+	
+	<section id="software_requirements">
+	<div class="page-header"><h3>SOFTWARE REQUIREMENTS.</h3><hr class="notop"></div>
+<p>
+	1. XAMPP ( for APACHE and mysql).</p>
+<p>
+	2. php.</p>
+<p>
+	3. COMPOSER.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="preparing_database">
+	<div class="page-header"><h3>Preparing Database.</h3><hr class="notop"></div>
+<p>	1. First you have to create Database manually named as &quot;fbuser&quot;.</p>
+<p>	2. Extract &quot;fblogin.zip&quot;.</p>
+<p>	3. then locate .env file inside ../fblogin/facebook-login (folder).</p>
+<p>	4. open this with an php editor (or any editor).</p>
+<p>	5. find</p>
+<div>
+	DB_HOST=127.0.0.1</div>
+<div>
+	&nbsp;</div>
+<div>
+	DB_PORT=3306</div>
+<p>	DB_DATABASE=fbuser</p>
+<p>	DB_USERNAME=root</p>
+<div>
+	DB_PASSWORD=</div>
+<div>
+	&nbsp;</div>
+<div>
+	6. edit them with your configurations.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	7. then goto&nbsp;../fblogin/facebook-login and open command window here.</div>
+<div>
+	&nbsp;</div>
+<div>
+	8. then type &quot; php artisan migrate &quot; in command prompt to migrate all tables to the database.</div>
+<div>
+	&nbsp;</div>
+<div>
+	9. now you are ready to access the API.</div>
+<div>
+	&nbsp;</div>
+<div>
+	NOTE :- &nbsp;IF YOU ARE HAVING PROBLEM WHILE MIGRATION, THEN IMPORT THE DATABASE FILE &quot;fbuser.sql&quot; to &quot;fbuser&quot; database.</div>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>GETTING STARTED.</h3><hr class="notop"></div>
+<p>	1.Once you have done with the database, you are ready for the main process.</p>
+<p>	2. Goto directory ../fblogin/facebook-login and open Command Prompt there.</p>
+<p>	3. Type &quot; php artisan serve &quot; in the command prompt.&nbsp;</p>
+<p>	4. Now open http://localhost:8000 for accessing the APP.</p>
+<p>	5. In these user need to click &quot;Login With Facebook&quot; button.</p>
+
+<img src="assets/images/1.jpg" alt="1">
+
+<p>	6. After that he/she will be redirected to facebook with a pop up of login-demo app(created by me) for accept or reject of request.</p>
+
+<img src="assets/images/2.jpg" alt="1">
+
+<p>	7. After accepting he would be redirected to the user&#39;s profile on the website with their basic details, like email address, profile picture, gender, etc.</p>
+
+<img src="assets/images/3.jpg" alt="1">
+
+<p>	8. DONE.!!</p>
+<p>	&nbsp;</p>
+<p>	THANKS..!!</p>
+</section>
+
+	</div>
+</body>
+</html>
